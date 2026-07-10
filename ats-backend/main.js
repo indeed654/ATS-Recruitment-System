@@ -77,7 +77,11 @@ async function startServer() {
 
         
         // Now sync database with all models
-        await sequelize.sync({ alter: true });
+        if (process.env.NODE_ENV === "production") {
+          await sequelize.sync();
+        } else {
+            await sequelize.sync({ alter: true });
+            }
         console.log('✅ Database synchronized with models');
         
         console.log('==========================================');
