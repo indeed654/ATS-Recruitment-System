@@ -84,7 +84,7 @@ const Job = sequelize.define('Job', {
         defaultValue: 'draft'
     },
     postedBy: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING(36),
         allowNull: false,
         references: {
             model: 'users',
@@ -97,7 +97,7 @@ const Job = sequelize.define('Job', {
     closedDate: DataTypes.DATE,
     notes: DataTypes.TEXT,
     updatedBy: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING(36),
         references: {
             model: 'users',
             key: 'id'

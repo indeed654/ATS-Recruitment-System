@@ -11,7 +11,7 @@ const Dashboard = sequelize.define('Dashboard', {
         autoIncrement: true
     },
     userId: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING(36),
         allowNull: false,
         references: {
             model: 'users',
@@ -39,7 +39,7 @@ const Dashboard = sequelize.define('Dashboard', {
         type: DataTypes.JSON // Store as JSON object
     },
     updatedBy: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING(36),
         references: {
             model: 'users',
             key: 'id'

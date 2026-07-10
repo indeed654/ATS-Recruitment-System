@@ -27,7 +27,7 @@ const Interview = sequelize.define('Interview', {
         }
     },
     interviewerId: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING(36),
         allowNull: false,
         references: {
             model: 'users',
@@ -79,7 +79,7 @@ const Interview = sequelize.define('Interview', {
     },
     notes: DataTypes.TEXT,
     createdBy: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING(36),
         allowNull: false,
         references: {
             model: 'users',
@@ -87,7 +87,7 @@ const Interview = sequelize.define('Interview', {
         }
     },
     updatedBy: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING(36),
         references: {
             model: 'users',
             key: 'id'

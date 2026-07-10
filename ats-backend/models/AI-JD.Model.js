@@ -40,7 +40,7 @@ const AIJD = sequelize.define('AIJD', {
     salaryRange_max: DataTypes.DECIMAL(10, 2),
     salaryRange_currency: DataTypes.STRING,
     generatedBy: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING(36),
         allowNull: false,
         references: {
             model: 'users',
@@ -76,7 +76,7 @@ const AIJD = sequelize.define('AIJD', {
     },
     notes: DataTypes.TEXT,
     updatedBy: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING(36),
         references: {
             model: 'users',
             key: 'id'

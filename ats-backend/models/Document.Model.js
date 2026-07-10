@@ -19,7 +19,7 @@ const Document = sequelize.define('Document', {
         }
     },
     userId: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING(36),
         allowNull: false,
         references: {
             model: 'users',
@@ -55,7 +55,7 @@ const Document = sequelize.define('Document', {
         allowNull: false
     },
     uploadedBy: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING(36),
         allowNull: false,
         references: {
             model: 'users',
@@ -72,7 +72,7 @@ const Document = sequelize.define('Document', {
     },
     notes: DataTypes.TEXT,
     updatedBy: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING(36),
         references: {
             model: 'users',
             key: 'id'

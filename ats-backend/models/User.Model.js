@@ -21,7 +21,7 @@ function initUserModel(sequelizeInstance) {
     
     User = sequelize.define('User', {
         id: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(36),
             allowNull: false,
             primaryKey: true,
             unique: true

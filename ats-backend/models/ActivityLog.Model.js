@@ -16,7 +16,7 @@ function initActivityLogModel(sequelizeInstance) {
             autoIncrement: true
         },
         userId: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(36),
             allowNull: false,
             references: {
                 model: 'users',
