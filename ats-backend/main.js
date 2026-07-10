@@ -190,10 +190,13 @@ async function startServer() {
     app.use(errorHandler);
 
 
-    // Seed default users if using SQLite (only in development)
-    if (dbInitialized && !process.env.DB_PASSWORD) {
+    // Seed default users after the DB is initialized.
+    // Safe because seedDefaultUsers() checks for existing admin@ats.local and only seeds when missing.
+    // Works for both SQLite (dev) and MySQL (prod/Render).
+    if (dbInitialized) {
         await seedDefaultUsers();
     }
+
 
     app.listen(PORT, () => {
         console.log(`✅ Server is running on PORT ${PORT}`);
