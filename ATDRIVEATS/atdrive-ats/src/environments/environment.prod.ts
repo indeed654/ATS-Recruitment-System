@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://ats-backend-7v3c.onrender.com'
+  apiUrl: 'hapiUrl: "https://ats-recruitment-system-o6uo.onrender.com/api"'
 };
